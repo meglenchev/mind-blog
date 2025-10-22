@@ -20,7 +20,7 @@ profilController.get('/', async (req, res) => {
             totalBlogs: userBlogs.length,
             followBlogs,
             totalFollowBlogs: followBlogs.length,
-            pageTitle: 'Catalog Page'
+            pageTitle: 'Profile Page'
         })
 
     } catch (err) {
