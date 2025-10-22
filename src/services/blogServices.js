@@ -15,6 +15,9 @@ export default {
         });
         return query;
     }, 
+    getLatest() {
+        return Blog.find().sort({_id: -1}).limit(3);
+    },
     getOne(blogId) {
         return Blog.findById(blogId);
     }, 
