@@ -1,9 +1,10 @@
 import { Router } from "express";
 import profileServices from "../services/profileServices.js";
+import { isAuth } from "../middlewares/authMiddleware.js";
 
 export const profilController = Router();
 
-profilController.get('/', async (req, res) => {
+profilController.get('/', isAuth, async (req, res) => {
     const email = req.user.email;
     const userId = req.user.id;
 
