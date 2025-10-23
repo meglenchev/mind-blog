@@ -8,5 +8,11 @@ export default {
             owner: true, 
             followList: true
         });
+    },
+    getAllByOwnerId(ownerId) {
+        return Blog.find({owner: ownerId});
+    }, 
+    getAllByFollower(followerId) {
+        return Blog.find().in('followList', followerId);
     }
 }
